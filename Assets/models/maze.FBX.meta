@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 7c00e9b24e6863e4ab23ab1437bca1c6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: GemOrange
+    100004: GemBlue
+    100006: GemGreen
+    100008: GemRed
+    100010: End
+    100012: Ramp 1
+    100014: Pellet 7
+    100016: SymbolRed
+    100018: SymbolGreen
+    100020: SymbolOrange
+    100022: SymbolBlue
+    100024: Pellet 5
+    100026: Pellet 14
+    100028: Ramp
+    100030: Pellet 4
+    100032: Block
+    100034: Block 1
+    100036: Block 2
+    100038: Pellet 18
+    100040: Pellet 3
+    100042: Pellet 2
+    100044: Pellet 1
+    100046: Pellet
+    100048: Pellet 17
+    100050: Pellet 16
+    100052: Pellet 15
+    100054: Pellet 6
+    100056: Pellet 13
+    100058: Pellet 12
+    100060: Pellet 11
+    100062: Pellet 10
+    100064: Pellet 9
+    100066: KeyOrange
+    100068: KeyBlue
+    100070: KeyGreen
+    100072: KeyRed
+    100074: Pellet 8
+    100076: WheelOrange
+    100078: WheelBlue
+    100080: WheelGreen
+    100082: WheelRed
+    100084: Ramp 2
+    100086: Ramp 3
+    100088: Ramp 4
+    100090: PortalOut4
+    100092: PortalIn3
+    100094: PortalOut3
+    100096: PortalIn2
+    100098: PortalOut2
+    100100: PortalOut1
+    100102: PortalIn1
+    100104: Start
+    100106: Walls
+    400000: //RootNode
+    400002: GemOrange
+    400004: GemBlue
+    400006: GemGreen
+    400008: GemRed
+    400010: End
+    400012: Ramp 1
+    400014: Pellet 7
+    400016: SymbolRed
+    400018: SymbolGreen
+    400020: SymbolOrange
+    400022: SymbolBlue
+    400024: Pellet 5
+    400026: Pellet 14
+    400028: Ramp
+    400030: Pellet 4
+    400032: Block
+    400034: Block 1
+    400036: Block 2
+    400038: Pellet 18
+    400040: Pellet 3
+    400042: Pellet 2
+    400044: Pellet 1
+    400046: Pellet
+    400048: Pellet 17
+    400050: Pellet 16
+    400052: Pellet 15
+    400054: Pellet 6
+    400056: Pellet 13
+    400058: Pellet 12
+    400060: Pellet 11
+    400062: Pellet 10
+    400064: Pellet 9
+    400066: KeyOrange
+    400068: KeyBlue
+    400070: KeyGreen
+    400072: KeyRed
+    400074: Pellet 8
+    400076: WheelOrange
+    400078: WheelBlue
+    400080: WheelGreen
+    400082: WheelRed
+    400084: Ramp 2
+    400086: Ramp 3
+    400088: Ramp 4
+    400090: PortalOut4
+    400092: PortalIn3
+    400094: PortalOut3
+    400096: PortalIn2
+    400098: PortalOut2
+    400100: PortalOut1
+    400102: PortalIn1
+    400104: Start
+    400106: Walls
+    2300000: GemOrange
+    2300002: GemBlue
+    2300004: GemGreen
+    2300006: GemRed
+    2300008: End
+    2300010: Ramp 1
+    2300012: Pellet 7
+    2300014: SymbolRed
+    2300016: SymbolGreen
+    2300018: SymbolOrange
+    2300020: SymbolBlue
+    2300022: Pellet 5
+    2300024: Pellet 14
+    2300026: Ramp
+    2300028: Pellet 4
+    2300030: Block
+    2300032: Block 1
+    2300034: Block 2
+    2300036: Pellet 18
+    2300038: Pellet 3
+    2300040: Pellet 2
+    2300042: Pellet 1
+    2300044: Pellet
+    2300046: Pellet 17
+    2300048: Pellet 16
+    2300050: Pellet 15
+    2300052: Pellet 6
+    2300054: Pellet 13
+    2300056: Pellet 12
+    2300058: Pellet 11
+    2300060: Pellet 10
+    2300062: Pellet 9
+    2300064: KeyOrange
+    2300066: KeyBlue
+    2300068: KeyGreen
+    2300070: KeyRed
+    2300072: Pellet 8
+    2300074: WheelOrange
+    2300076: WheelBlue
+    2300078: WheelGreen
+    2300080: WheelRed
+    2300082: Ramp 2
+    2300084: Ramp 3
+    2300086: Ramp 4
+    2300088: PortalOut4
+    2300090: PortalIn3
+    2300092: PortalOut3
+    2300094: PortalIn2
+    2300096: PortalOut2
+    2300098: PortalOut1
+    2300100: PortalIn1
+    2300102: Start
+    2300104: Walls
+    3300000: GemOrange
+    3300002: GemBlue
+    3300004: GemGreen
+    3300006: GemRed
+    3300008: End
+    3300010: Ramp 1
+    3300012: Pellet 7
+    3300014: SymbolRed
+    3300016: SymbolGreen
+    3300018: SymbolOrange
+    3300020: SymbolBlue
+    3300022: Pellet 5
+    3300024: Pellet 14
+    3300026: Ramp
+    3300028: Pellet 4
+    3300030: Block
+    3300032: Block 1
+    3300034: Block 2
+    3300036: Pellet 18
+    3300038: Pellet 3
+    3300040: Pellet 2
+    3300042: Pellet 1
+    3300044: Pellet
+    3300046: Pellet 17
+    3300048: Pellet 16
+    3300050: Pellet 15
+    3300052: Pellet 6
+    3300054: Pellet 13
+    3300056: Pellet 12
+    3300058: Pellet 11
+    3300060: Pellet 10
+    3300062: Pellet 9
+    3300064: KeyOrange
+    3300066: KeyBlue
+    3300068: KeyGreen
+    3300070: KeyRed
+    3300072: Pellet 8
+    3300074: WheelOrange
+    3300076: WheelBlue
+    3300078: WheelGreen
+    3300080: WheelRed
+    3300082: Ramp 2
+    3300084: Ramp 3
+    3300086: Ramp 4
+    3300088: PortalOut4
+    3300090: PortalIn3
+    3300092: PortalOut3
+    3300094: PortalIn2
+    3300096: PortalOut2
+    3300098: PortalOut1
+    3300100: PortalIn1
+    3300102: Start
+    3300104: Walls
+    4300000: Walls
+    4300002: Start
+    4300004: PortalIn1
+    4300006: PortalOut1
+    4300008: PortalOut2
+    4300010: PortalIn2
+    4300012: PortalOut3
+    4300014: PortalIn3
+    4300016: PortalOut4
+    4300018: Ramp1
+    4300020: Ramp2
+    4300022: Ramp3
+    4300024: WheelRed
+    4300026: WheelGreen
+    4300028: WheelBlue
+    4300030: WheelOrange
+    4300032: Pellet
+    4300034: KeyRed
+    4300036: KeyGreen
+    4300038: KeyBlue
+    4300040: KeyOrange
+    4300042: Pellet
+    4300044: Pellet
+    4300046: Pellet
+    4300048: Pellet
+    4300050: Pellet
+    4300052: Pellet
+    4300054: Pellet
+    4300056: Pellet
+    4300058: Pellet
+    4300060: Pellet
+    4300062: Pellet
+    4300064: Pellet
+    4300066: Pellet
+    4300068: Pellet001
+    4300070: Block
+    4300072: Block
+    4300074: Block
+    4300076: Pellet
+    4300078: Ramp
+    4300080: Pellet
+    4300082: Pellet
+    4300084: SymbolBlue
+    4300086: SymbolOrange
+    4300088: SymbolGreen
+    4300090: SymbolRed
+    4300092: Pellet
+    4300094: Ramp
+    4300096: End
+    4300098: GemRed
+    4300100: GemGreen
+    4300102: GemBlue
+    4300104: GemOrange
+    4300106: Ramp
+    4300108: Ramp
+    4300110: Pellet
+    4300112: Ramp
+    11100000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.025
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
