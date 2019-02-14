@@ -893,6 +893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6936e7a3c604007b7becd8083c1872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletsUI: {fileID: 1145671509}
+  mazeObj: {fileID: 1204115173}
+  pelletPrefab: {fileID: 1305729816, guid: 2d300ecfd2e564cc88cbb35f653e6827, type: 3}
 --- !u!4 &975231071
 Transform:
   m_ObjectHideFlags: 0
@@ -986,6 +989,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145671507}
   m_CullTransparentMesh: 0
+--- !u!1 &1204115173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 7c00e9b24e6863e4ab23ab1437bca1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400339397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100104, guid: 7c00e9b24e6863e4ab23ab1437bca1c6,
