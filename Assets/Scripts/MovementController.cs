@@ -5,10 +5,10 @@ using UnityEngine;
 public class MovementController : MonoBehaviour {
 
   //public variables
-  public GameObject startObj;
   public float movementSpeed = 1.0f; //multiplier to adjust movement rate
-  float mouseSensitivity = 3.0f; //multiplier to adjust mouse movement rate
+  float mouseSensitivity = 5.0f; //multiplier to adjust mouse movement rate
   float rotUDrange = 45.0f; //range to look up and down in degrees
+  public GameObject[] spawnLocs; //the portIn objects to transport to
 
   //private variables
   private CharacterController cc;
@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour {
 
   void Start () {
     //position the camera node at the start location
-    transform.position = startObj.transform.position;
+    PortOut("0");
     //gain access to the character controller component
     cc = GetComponent<CharacterController>();
     //keep track of the local rotation of the camera - b/c the 360 wrap
@@ -40,5 +40,12 @@ public class MovementController : MonoBehaviour {
     move = new Vector3(sideSpeed, 0, forwardSpeed); //vector pointing in direction of desired movement
     move = transform.rotation * move; //adjust the vector from the mouse
     cc.SimpleMove(move); //tell the cc to move along the provided vector
+  }
+
+  void PortOut (string key) {
+    //using a portal to change location - key is the string index to port to
+    int index = int.Parse(key); //convert string key to int index
+    //Debug.Log("In PortOut: " + key);
+    transform.position = spawnLocs[index].transform.position;
   }
 }
