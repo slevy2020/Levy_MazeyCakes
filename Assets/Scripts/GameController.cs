@@ -12,12 +12,18 @@ public class GameController : MonoBehaviour {
 
   //private variables
   private int pelletsCollected;
+  private Dictionary<string, GameObject> keyUI = new Dictionary<string, GameObject>();
 
   void Start () {
     //start with no pellets collected
     pelletsCollected = 0;
     //lay out the game elements in the maze
     LayoutMaze();
+    //build UI key Dictionary
+    keyUI["red"] = GameObject.Find("UI Image - keyRed");
+    keyUI["green"] = GameObject.Find("UI Image - keyGreen");
+    keyUI["blue"] = GameObject.Find("UI Image - keyBlue");
+    keyUI["orange"] = GameObject.Find("UI Image - keyOrange");
   }
 
   void Update () {
@@ -31,6 +37,15 @@ public class GameController : MonoBehaviour {
       case "pellet":
         //hit a pellet - add to the timer
         pelletsCollected += 1;
+        break;
+      case "red":
+      case "green":
+      case "blue":
+      case "orange":
+        //hit a key -> update ui, unlock wheel
+        Color c = keyUI[key].GetComponent<Image>().color;
+        c.a = 255;
+        keyUI[key].GetComponent<Image>().color = c; //make it visible
         break;
     }
   }
