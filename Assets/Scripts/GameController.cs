@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour {
         Color c = keyUI[key].GetComponent<Image>().color;
         c.a = 255;
         keyUI[key].GetComponent<Image>().color = c; //make it visible
+        //tell the wheel to unlock
+        GameObject.Find("WheelObj_" + key).SendMessage("unlock wheel");
         break;
     }
   }
