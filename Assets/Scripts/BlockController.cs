@@ -19,9 +19,13 @@ public class BlockController : MonoBehaviour {
     transform.position += speed * direction * Time.deltaTime;
   }
 
-  void OnCollisionEnter () {
+  void OnCollisionEnter (Collision collision) {
     Debug.Log("Block hit");
+    if (collision.gameObject.name == "Walls" ||
+        collision.gameObject.name.Contains("Ramp") ||
+        collision.gameObject.name.Contains("Block")) {
     //flip the direction
     direction *= -1;
+    }
   }
 }

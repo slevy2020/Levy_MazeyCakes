@@ -10,12 +10,13 @@ public class Trigger : MonoBehaviour {
   public string key; //key value to send to the function
   public bool delete; //should this object be destroyed
 
-  void OnTriggerEnter () {
+  void OnTriggerEnter (Collider other) {
     //handle collision - collide this game object
-  //  Debug.Log(other.gameObject.name + "hit" + this.gameObject.name);
-    GameObject.Find(sendToName).SendMessage(call, key); //send a message
-    if (delete) {
-      Destroy(this.gameObject);
+    if (other.gameObject.name == "CameraNode") {
+      GameObject.Find(sendToName).SendMessage(call, key); //send a message
+      if (delete) {
+        Destroy(this.gameObject);
+      }
     }
   }
 }
