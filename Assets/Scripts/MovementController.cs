@@ -48,4 +48,9 @@ public class MovementController : MonoBehaviour {
     //Debug.Log("In PortOut: " + key);
     transform.position = spawnLocs[index].transform.position;
   }
+
+  void BlockShove (Vector3 shoveSpeed) {
+    //called by BlockController - block hit player so push the player
+    cc.SimpleMove(shoveSpeed*10); //add a bit more to the shove vector
+  }
 }
