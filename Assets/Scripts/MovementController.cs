@@ -17,6 +17,7 @@ public class MovementController : MonoBehaviour {
   private float sideSpeed; //relative amount to move sideways
   private float rotLR; //relative amount to turn left and right
   private float rotUD; //the current up/down orientation
+  private bool hitPortal; //whether or not the player has stepped on a portal
 
   void Start () {
     //position the camera node at the start location
@@ -25,6 +26,8 @@ public class MovementController : MonoBehaviour {
     cc = GetComponent<CharacterController>();
     //keep track of the local rotation of the camera - b/c the 360 wrap
     rotUD = 0;
+    //init portal state
+    hitPortal = false;
   }
 
   void Update () {
@@ -39,7 +42,13 @@ public class MovementController : MonoBehaviour {
     sideSpeed = Input.GetAxis("Horizontal") * movementSpeed; //how far to move left or right
     move = new Vector3(sideSpeed, 0, forwardSpeed); //vector pointing in direction of desired movement
     move = transform.rotation * move; //adjust the vector from the mouse
-    cc.SimpleMove(move); //tell the cc to move along the provided vector
+    // only move if we haven't just stepped on a portal
+    if (!hitPortal) {
+	     cc.SimpleMove(move); // tell the character controller to move along the provided vector
+     } else {
+	      // that means we just hit the portal and teleported so we can reset hitPortal
+	     hitPortal = false;
+     }
   }
 
   void PortOut (string key) {
@@ -47,6 +56,8 @@ public class MovementController : MonoBehaviour {
     int index = int.Parse(key); //convert string key to int index
     //Debug.Log("In PortOut: " + key);
     transform.position = spawnLocs[index].transform.position;
+    //reset portal state
+    hitPortal = true;
   }
 
   void BlockShove (Vector3 shoveSpeed) {

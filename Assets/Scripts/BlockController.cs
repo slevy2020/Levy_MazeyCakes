@@ -28,7 +28,7 @@ public class BlockController : MonoBehaviour {
     direction *= -1;
     } else if (collision.gameObject.name == "CameraNode") {
       //tell the game controller to damage the player
-      GameObject.Find("GameController").SendMessage("Hit", "Block");
+      GameObject.Find("GameController").SendMessage("Hit", "block");
       //tell the player rig to move back a bit for player feedback
       GameObject.Find("CameraNode").SendMessage("BlockShove", speed*direction);
     }
