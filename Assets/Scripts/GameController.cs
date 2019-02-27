@@ -142,4 +142,8 @@ public class GameController : MonoBehaviour {
       endObj.SetActive(false);
     }
   }
+
+  public int GetTimer() {
+    return timer;
+  }
 }
