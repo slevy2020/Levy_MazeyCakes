@@ -85,7 +85,20 @@ public class GameController : MonoBehaviour {
       case "block":
         //hit by a block - lose health
         health -= healthHit;
-        Debug.Log(health);
+        if (health <= 0) {
+          Debug.Log("you died, press f to pay respects");
+          //set win state in persistent data
+          //ADD CODE HERE
+          //go to end screen
+          //ADD CODE HERE
+        }
+        break;
+      case "fall":
+        Debug.Log("it actually takes skill to lose by falling");
+        //set win state in persistent data
+        //ADD CODE HERE
+        //go to end screen
+        //ADD CODE HERE
         break;
     }
   }
@@ -104,6 +117,13 @@ public class GameController : MonoBehaviour {
   void CountDown () {
     //reduce the timer by 1 sec
     timer -= 1;
+    if (timer <= 0) {
+      Debug.Log("you're too slow!");
+      //set win state in persistent data
+      //ADD CODE HERE
+      //go to end screen
+      //ADD CODE HERE
+    }
   }
 
   void TestGems () {
