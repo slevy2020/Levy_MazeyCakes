@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour {
   public int maxTime = 300; //in seconds, how long to play
   public Text timerUI; //pointer to timer ui
   public int pelletTime = 10; //in seconds, how much time to add for each pellet
+  public Texture gemOffTex; //the gem off texture
+  public GameObject[] gemObjs; //array of pointers to the game objects
+  public GameObject endObj; //pointer to the End object
 
   //private variables
 //  private int pelletsCollected;
@@ -26,6 +29,8 @@ public class GameController : MonoBehaviour {
   void Start () {
     //start with no pellets collected
 //    pelletsCollected = 0;
+    //hide the end object
+    endObj.SetActive(false);
     //init health
     health = maxHealth;
     //lay out the game elements in the maze
@@ -48,11 +53,21 @@ public class GameController : MonoBehaviour {
 //    pelletsUI.text = "Pellets: " + pelletsCollected.ToString();
     healthUI.sprite = healthImg[health / (maxHealth / 4)];
     timerUI.text = string.Format("{0:0}:{1:00}", timer / 60, timer % 60);
+    //should the end object be made available
+    TestGems();
   }
 
   void Hit (string key) {
     //a collider was hit - do something based on the provided key
     switch (key) {
+      case "end":
+        //hit end -- win!
+        Debug.Log("Win!");
+        //set win state in persistent data
+        //ADD CODE HERE
+        //go to end screen
+        //ADD CODE HERE
+        break;
       case "pellet":
         //hit a pellet - add to the timer
 //        pelletsCollected += 1;
@@ -89,5 +104,22 @@ public class GameController : MonoBehaviour {
   void CountDown () {
     //reduce the timer by 1 sec
     timer -= 1;
+  }
+
+  void TestGems () {
+    //if all four gems are activated then unhide the end object
+    bool open = true; //temp var - start as if true
+    //are all four gems activated?
+    for (int i = 0; i < gemObjs.Length; i += 1) {
+      if (gemObjs[i].GetComponent<Renderer>().material.mainTexture == gemOffTex) {
+        open = false;
+        break; //no sense checking any of the others
+      }
+    }
+    if (open) { //all were open
+      endObj.SetActive(true);
+    } else {
+      endObj.SetActive(false);
+    }
   }
 }
