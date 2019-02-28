@@ -30,4 +30,9 @@ public class GemController : MonoBehaviour {
     GetComponent<Renderer>().material.mainTexture = inactiveTex;
   }
 
+  public void ActivateAll() {
+    //just for testing purposes
+    Activate();
+  }
+
 }

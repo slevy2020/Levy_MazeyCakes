@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -25,6 +26,7 @@ public class GameController : MonoBehaviour {
   private Dictionary<string, GameObject> keyUI = new Dictionary<string, GameObject>();
   private int health;
   private int timer;
+  private PersistentData persistentScript;
 
   void Start () {
     //start with no pellets collected
@@ -46,6 +48,8 @@ public class GameController : MonoBehaviour {
     //init and start the timer
     timer = maxTime;
     InvokeRepeating("CountDown", 1, 1); //function to call, in n1 sec, repeat every n2 sec
+    //get control of persistent data
+    persistentScript = GameObject.Find("PersistentObject").GetComponent<PersistentData>();
   }
 
   void Update () {
@@ -64,9 +68,9 @@ public class GameController : MonoBehaviour {
         //hit end -- win!
         Debug.Log("Win!");
         //set win state in persistent data
-        //ADD CODE HERE
+        persistentScript.SetWin(true);
         //go to end screen
-        //ADD CODE HERE
+        SceneManager.LoadScene("end");
         break;
       case "pellet":
         //hit a pellet - add to the timer
@@ -88,17 +92,17 @@ public class GameController : MonoBehaviour {
         if (health <= 0) {
           Debug.Log("you died, press f to pay respects");
           //set win state in persistent data
-          //ADD CODE HERE
+          persistentScript.SetWin(false);
           //go to end screen
-          //ADD CODE HERE
+          SceneManager.LoadScene("end");
         }
         break;
       case "fall":
         Debug.Log("it actually takes skill to lose by falling");
         //set win state in persistent data
-        //ADD CODE HERE
+        persistentScript.SetWin(false);
         //go to end screen
-        //ADD CODE HERE
+        SceneManager.LoadScene("end");
         break;
     }
   }
@@ -120,9 +124,9 @@ public class GameController : MonoBehaviour {
     if (timer <= 0) {
       Debug.Log("you're too slow!");
       //set win state in persistent data
-      //ADD CODE HERE
+      persistentScript.SetWin(false);
       //go to end screen
-      //ADD CODE HERE
+      SceneManager.LoadScene("end");
     }
   }
 

@@ -16,8 +16,6 @@ public class PersistentData : MonoBehaviour {
     Reset();
     //make this object persistent
     DontDestroyOnLoad(transform.gameObject);
-    //get control of the game controller
-    gameController = GameObject.Find("GameController").GetComponent<GameController>();
   }
 
   void Reset() {
@@ -26,6 +24,8 @@ public class PersistentData : MonoBehaviour {
   }
 
   public void SetWin(bool state) {
+    //get control of the game controller
+    gameController = GameObject.Find("GameController").GetComponent<GameController>();
     //record provided win state
     win = state;
     //record the time that the game was finished

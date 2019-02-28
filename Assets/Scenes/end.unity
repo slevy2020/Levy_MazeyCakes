@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543a97d842631484daa6e5842b601c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseBackground: {fileID: 2800000, guid: 7c56f39af9307fc48a7a4581a16e8671, type: 3}
-  winBackground: {fileID: 2800000, guid: 13beed409cd314c4098f79e12bfda5ed, type: 3}
+  loseBackground: {fileID: 21300000, guid: 7c56f39af9307fc48a7a4581a16e8671, type: 3}
+  winBackground: {fileID: 21300000, guid: 13beed409cd314c4098f79e12bfda5ed, type: 3}
 --- !u!4 &1072663473
 Transform:
   m_ObjectHideFlags: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 13beed409cd314c4098f79e12bfda5ed, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
