@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour {
   //variables for jumping
   public float speed = 6.0f;
   public float jumpSpeed = 8.0f;
-  public float gravity = 20.0f;
+  public float gravity = 1.0f;
 
   //private variables
   private CharacterController cc;
@@ -62,12 +62,19 @@ public class MovementController : MonoBehaviour {
      }
      //if able to jump, then jump
      if ((Input.GetKeyDown(KeyCode.Space)) && (gameController.jumps >= 1) && (cc.isGrounded)) {
-       move.y = jumpSpeed;
+       float currentZ = gameObject.transform.position.z;
+       float currentX = gameObject.transform.position.x;
+       float currentY = gameObject.transform.position.y;
+       for (int i = 0; i < 70; i++) {
+         gameObject.transform.position = new Vector3(currentX, currentY + .1f, currentZ);
+         currentY = gameObject.transform.position.y;
+       }
        gameController.jumps -= 1;
-       Debug.Log("Jumps Remaining: " + gameController.jumps);
+       Debug.Log(move.y);
      }
      // Apply gravity
      move.y = move.y - (gravity * Time.deltaTime);
+  //   Debug.Log(move.y);
   }
 
   void PortOut (string key) {
