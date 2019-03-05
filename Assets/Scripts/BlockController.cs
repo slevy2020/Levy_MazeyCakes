@@ -20,7 +20,6 @@ public class BlockController : MonoBehaviour {
   }
 
   void OnCollisionEnter (Collision collision) {
-    Debug.Log("Block hit");
     if (collision.gameObject.name == "Walls" ||
         collision.gameObject.name.Contains("Ramp") ||
         collision.gameObject.name.Contains("Block")) {

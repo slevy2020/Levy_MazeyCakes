@@ -9,6 +9,10 @@ public class MovementController : MonoBehaviour {
   float mouseSensitivity = 5.0f; //multiplier to adjust mouse movement rate
   float rotUDrange = 45.0f; //range to look up and down in degrees
   public GameObject[] spawnLocs; //the portIn objects to transport to
+  //variables for jumping
+  public float speed = 6.0f;
+  public float jumpSpeed = 8.0f;
+  public float gravity = 20.0f;
 
   //private variables
   private CharacterController cc;
@@ -18,16 +22,23 @@ public class MovementController : MonoBehaviour {
   private float rotLR; //relative amount to turn left and right
   private float rotUD; //the current up/down orientation
   private bool hitPortal; //whether or not the player has stepped on a portal
+  private GameController gameController;
+  //variables for jumping
+//  private Vector3 moveDirection = Vector3.zero;
 
   void Start () {
     //position the camera node at the start location
     PortOut("0");
     //gain access to the character controller component
     cc = GetComponent<CharacterController>();
+    //let character fall down
+    gameObject.transform.position = new Vector3(0, 1, 0);
     //keep track of the local rotation of the camera - b/c the 360 wrap
     rotUD = 0;
     //init portal state
     hitPortal = false;
+    //get control of the game controller script
+    gameController = GameObject.Find("GameController").GetComponent<GameController>();
   }
 
   void Update () {
@@ -49,6 +60,14 @@ public class MovementController : MonoBehaviour {
 	      // that means we just hit the portal and teleported so we can reset hitPortal
 	     hitPortal = false;
      }
+     //if able to jump, then jump
+     if ((Input.GetKeyDown(KeyCode.Space)) && (gameController.jumps >= 1) && (cc.isGrounded)) {
+       move.y = jumpSpeed;
+       gameController.jumps -= 1;
+       Debug.Log("Jumps Remaining: " + gameController.jumps);
+     }
+     // Apply gravity
+     move.y = move.y - (gravity * Time.deltaTime);
   }
 
   void PortOut (string key) {

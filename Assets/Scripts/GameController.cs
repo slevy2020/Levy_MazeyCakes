@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 //  public Text pelletsUI; //give the player feedback
   public GameObject mazeObj; //need to access the maze models
   public GameObject pelletPrefab; //a pointer to the prefab model
+  public GameObject jumpPrefab; //a pointer to the prefab model
   public int maxHealth = 100; //max amount of health
   public Image healthUI; //pointer to the UI element to change the source image
   public Sprite[] healthImg; //images for 0, 25, 50, 75, 100  - in that order
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour {
   public Texture gemOffTex; //the gem off texture
   public GameObject[] gemObjs; //array of pointers to the game objects
   public GameObject endObj; //pointer to the End object
+  public int jumps; //how many jumps the player has remaining
 
   //private variables
 //  private int pelletsCollected;
@@ -29,12 +31,13 @@ public class GameController : MonoBehaviour {
   private PersistentData persistentScript;
 
   void Start () {
-    //start with no pellets collected
-//    pelletsCollected = 0;
     //hide the end object
+    endObj = GameObject.Find("End");
     endObj.SetActive(false);
     //init health
     health = maxHealth;
+    //init jumps
+    jumps = 0;
     //lay out the game elements in the maze
     LayoutMaze();
     //build UI key Dictionary
@@ -66,7 +69,6 @@ public class GameController : MonoBehaviour {
     switch (key) {
       case "end":
         //hit end -- win!
-        Debug.Log("Win!");
         //set win state in persistent data
         persistentScript.SetWin(true);
         //go to end screen
@@ -90,7 +92,6 @@ public class GameController : MonoBehaviour {
         //hit by a block - lose health
         health -= healthHit;
         if (health <= 0) {
-          Debug.Log("you died, press f to pay respects");
           //set win state in persistent data
           persistentScript.SetWin(false);
           //go to end screen
@@ -98,11 +99,14 @@ public class GameController : MonoBehaviour {
         }
         break;
       case "fall":
-        Debug.Log("it actually takes skill to lose by falling");
         //set win state in persistent data
         persistentScript.SetWin(false);
         //go to end screen
         SceneManager.LoadScene("end");
+        break;
+      case "jump":
+        jumps += 1;
+        Debug.Log("Jumps Remaining: " + jumps);
         break;
     }
   }
@@ -113,6 +117,11 @@ public class GameController : MonoBehaviour {
       if (child.gameObject.name.Contains("Pellet")) {
         //switch out the locator for a pellet prefab
         Instantiate(pelletPrefab, child.position, child.rotation);
+        Destroy(child.gameObject);
+      }
+      if (child.gameObject.name.Contains("JumpCube")) {
+        //switch out the locator for a pellet prefab
+        Instantiate(jumpPrefab, child.position, child.rotation);
         Destroy(child.gameObject);
       }
     }
