@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour {
   public int maxHealth = 100; //max amount of health
   public Image healthUI; //pointer to the UI element to change the source image
   public Sprite[] healthImg; //images for 0, 25, 50, 75, 100  - in that order
+  public Image jumpsUI; //pointer to the UI element to change the source image
+  public Sprite[] jumpsImg; //images for 0, 1, 2, 3 jumps - in that order
   public int healthHit = 10; //how much health to lose when hit by a block
   public int maxTime = 300; //in seconds, how long to play
   public Text timerUI; //pointer to timer ui
@@ -59,6 +61,7 @@ public class GameController : MonoBehaviour {
     //refresh the UI - give the player feedback
 //    pelletsUI.text = "Pellets: " + pelletsCollected.ToString();
     healthUI.sprite = healthImg[health / (maxHealth / 4)];
+    jumpsUI.sprite = jumpsImg[jumps];
     timerUI.text = string.Format("{0:0}:{1:00}", timer / 60, timer % 60);
     //should the end object be made available
     TestGems();
