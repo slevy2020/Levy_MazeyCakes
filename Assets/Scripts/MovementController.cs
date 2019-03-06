@@ -13,6 +13,7 @@ public class MovementController : MonoBehaviour {
   public float speed = 6.0f;
   public float jumpSpeed = 8.0f;
   public float gravity = 1.0f;
+  public Vector3 standardGravity;
 
   //private variables
   private CharacterController cc;
@@ -23,8 +24,6 @@ public class MovementController : MonoBehaviour {
   private float rotUD; //the current up/down orientation
   private bool hitPortal; //whether or not the player has stepped on a portal
   private GameController gameController;
-  //variables for jumping
-//  private Vector3 moveDirection = Vector3.zero;
 
   void Start () {
     //position the camera node at the start location
@@ -39,6 +38,8 @@ public class MovementController : MonoBehaviour {
     hitPortal = false;
     //get control of the game controller script
     gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    //set standard gravity
+    standardGravity = new Vector3(0.0f, -9.8f, 0.0f);
   }
 
   void Update () {
@@ -65,16 +66,18 @@ public class MovementController : MonoBehaviour {
        float currentZ = gameObject.transform.position.z;
        float currentX = gameObject.transform.position.x;
        float currentY = gameObject.transform.position.y;
-       for (int i = 0; i < 70; i++) {
+       for (int i = 0; i < 90; i++) {
+         //gravity for jumping
+         Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y / 3, Physics.gravity.z);
          gameObject.transform.position = new Vector3(currentX, currentY + .1f, currentZ);
          currentY = gameObject.transform.position.y;
        }
        gameController.jumps -= 1;
-       Debug.Log(move.y);
      }
      // Apply gravity
-     move.y = move.y - (gravity * Time.deltaTime);
-  //   Debug.Log(move.y);
+     if (cc.isGrounded) {
+     Physics.gravity = standardGravity;
+    }
   }
 
   void PortOut (string key) {
