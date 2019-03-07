@@ -66,9 +66,9 @@ public class MovementController : MonoBehaviour {
        float currentZ = gameObject.transform.position.z;
        float currentX = gameObject.transform.position.x;
        float currentY = gameObject.transform.position.y;
+       Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y / 3, Physics.gravity.z);
        for (int i = 0; i < 90; i++) {
          //gravity for jumping
-         Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y / 3, Physics.gravity.z);
          gameObject.transform.position = new Vector3(currentX, currentY + .1f, currentZ);
          currentY = gameObject.transform.position.y;
        }
